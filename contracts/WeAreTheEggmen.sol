@@ -9,6 +9,10 @@ contract WeAreTheEggmen is Ownable {
     address public authorizedUser;
     uint public blobCount;
 
+    constructor() Ownable(msg.sender) {
+        // Initialization code if needed
+    }
+
     modifier onlyAuthorizedUser() {
         require(msg.sender == authorizedUser, "Not authorized to add");
         _;
